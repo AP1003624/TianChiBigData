@@ -24,11 +24,11 @@ from keras.layers.core import Dense,Activation
 # 建立模型
 model = Sequential()
 # 3个输入的，10个隐藏点
-model.add(Dense(3,10)) # 有问题
+model.add(Dense(10,input_dim=3))
 # 用relu函数作为输入函数，能够大幅度提供准确度
 model.add(Activation('relu'))
-# 10个隐藏节点，1个输出节点
-model.add(Dense(10,1)) # 有问题
+# 10个隐藏节点，1个输出节点(第一层指定输入输出后其他层不用再指定输入层）
+model.add(Dense(1))
 # 由于是0-1输出，用sigmoid函数作为激活函数
 model.add(Activation('sigmoid'))
 
