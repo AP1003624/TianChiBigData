@@ -38,12 +38,12 @@ net.add(Dense(10,input_dim=3))
 net.add(Activation('relu'))
 # 添加隐藏层（10节点）到输出层（1节点）的连接
 net.add(Dense(1))
-# # # 输出层使用sigmoid激活函数
+# 输出层使用sigmoid激活函数
 net.add(Activation('sigmoid'))
 # 编译模型，用adam求解
 net.compile(loss='binary_crossentropy',optimizer='adam',class_mode='binary')
 # 训练模型，循环1000次
-net.fit(train[:,:3],train[:,3],nb_epoch=1000,batch_size=1)
+net.fit(train[:,:3],train[:,3],nb_epoch=100,batch_size=1)
 # 保存模型
 net.save_weights(netFile)
 
